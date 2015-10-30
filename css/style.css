@@ -1,0 +1,286 @@
+@font-face {
+  font-family: 'Lobster Two';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster Two'), local('LobsterTwo'), url(http://fonts.gstatic.com/s/lobstertwo/v7/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(http://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+
+html{
+	padding-left:1em;
+	padding-right:1em;
+	padding-bottom:0em;
+}
+body {
+	margin-top:0em;
+	margin-bottom:0em;
+    	font-family: Droid Sans;
+    	font-size: 14px;
+
+}
+hr	{
+	margin:0;
+	border-color: #4AA94A;
+}
+h1,h2,h3{
+	font-family: Lobster Two;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+h1{
+	text-align:center;
+	color: #5CB85C;
+}
+
+h2,h3{
+	color: #FFF;
+}
+.table-cell{
+	display:table-cell;
+	vertical-align:middle;
+	}
+#header	  {
+	background-color: #313131;
+  text-align: center;
+  padding: 1em;
+}
+
+#breadcrumb{
+	background-color: #30963C;
+}
+
+#breadcrumb p{
+	margin-left:1.5em;
+	}
+
+#main{
+	display:table;
+	width:100%;
+}
+
+#nav{
+	width:20%;
+	background-color:#5CB85C;
+	padding-left:1.5em;
+	vertical-align:top;
+	}
+
+#nav ul{
+	list-style-type:none;
+	padding:0;
+	}
+
+#nav ul li {
+	margin-top:1em;
+	}
+
+
+
+#content{
+	width:80%;
+	background-color: #A3D7A3;
+	padding-left:1.5em;
+	padding-right:1.5em;
+	padding-bottom:2em;
+	}
+
+#footer{
+	background-color: #666666;
+	clear:both;
+	text-align:center;
+	color:#FFF;
+	padding:1em;
+	}
+
+#logo{
+  width: 10em;
+}
+
+a{
+	color:blue;
+	}
+
+a:hover{
+	color:#A3D7A3;
+	}
+
+a:visited,#content .form_inserimento span{
+	color:red;
+	}
+
+#content .form_inserimento span{
+	display:block;
+}
+
+.allinea{
+	float:left;
+	padding-left:1.5em;
+	padding-right:1.5em;
+	}
+
+
+
+#content .form_inserimento fieldset #container_dati_ins{
+	width:85%;
+	}
+#content .form_inserimento fieldset #container_pulsante_ins{
+	width:15%;
+	}
+
+#content form{
+	text-align:center;
+}
+
+#content form fieldset{
+	border:none;
+}
+
+#content #lista_servizi,#content #lista_Commenti,#content #inserisci_prodotto,#content .form_inserimento{
+	display:table;
+	margin:0 auto;
+	width:100%;
+}
+
+#content #lista_servizi,#content #lista_Commenti{
+	border-collapse:separate;
+	border-spacing:1em;
+}
+
+#content #lista_Commenti{
+	background-image: url("../img/bg_wide.jpg");
+	border-radius:4px;
+}
+
+#content #lista_servizi .column_servizi{
+	display:table-cell;
+	width:30%;
+	background-image: url("../img/bg_wide.jpg");
+	text-align:center;
+	padding-left:0.5em;
+	padding-right:0.5em;
+	border:1px solid #FFF;
+	border-radius:4px;
+}
+
+#content #lista_Commenti .commento{
+	padding:1em;
+	border:2px solid #4CAE4C;
+	border-top:none;
+}
+
+#content #lista_Commenti #num_commenti{
+	display:block;
+	padding:1em;
+	background-color: #5CB85C;
+	border: 1px solid #4CAE4C;
+	margin:0;
+
+}
+
+#content textarea{
+	resize:none;
+}
+
+#content .form_inserimento fieldset{
+	display:table-row;
+}
+
+.pulsante{
+	cursor:pointer;
+	color:#FFF;
+	background-color: #5CB85C;
+	border-radius:4px;
+	border: 1px solid #4CAE4C;
+	padding: 6px 12px;
+}
+
+.pulsante:hover{
+	background-color: #4AA94A;
+}
+
+.inline-block{
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#content #lista_Commenti .commento #commento_dati{
+	width:60%;
+	padding-left:1em;
+}
+
+#content #lista_Commenti .commento #commento_delete{
+	width:30%;
+	text-align:center;
+}
+
+#content .form_inserimento .pulsante{
+	float:left;
+	margin:0 auto;
+}
+
+#content #form_login,#content #new_admin_form{
+	text-align:center;
+}
+
+#content #form_login fieldset,#content #new_admin_form fieldset{
+	display:inline-block;
+	text-align:center;
+	width:30%;
+}
+
+#content #form_login .pulsante,#content #new_admin_form .pulsante,#content #form_login label,#content #new_admin_form label,#content #new_admin_form input[type="text"],#content #new_admin_form input[type="password"],#content #form_login input[type="text"],#content #form_login input[type="password"]{
+	float:none;
+	margin-top:1em;
+	margin-bottom:0.5em;
+}
+
+
+#content .form_inserimento label{width:7em;}
+
+#content .form_inserimento input[type="text"],#content .form_inserimento input[type="password"]{
+	width:15em;
+}
+
+#content .form_inserimento textarea{
+	width:45.5em;
+}
+
+#content .form_inserimento .pulsante{
+	width:11em;
+}
+
+#content .form_inserimento label,#content .form_inserimento input[type="text"],#content .form_inserimento input[type="password"],#content .form_inserimento textarea{
+	float:left;
+}
+
+#content .clear_both{
+	clear:both;
+}
+
+
+#content #lista_servizi .column_servizi label{
+	display:inline-block;
+	width:35%;
+	vertical-align:middle;
+}
+#content #lista_servizi .column_servizi input[type="text"],#content #lista_servizi .column_servizi textarea{
+	display:inline-block;
+	width:60%;
+	vertical-align:middle;
+}
+
+#content #lista_servizi .column_servizi .pulsante{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+
+#content #lista_servizi .row_servizi{
+	display:table-row;
+}

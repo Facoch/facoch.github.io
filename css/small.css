@@ -1,117 +1,89 @@
-/* Copiato dal sito di informatica come base
-#header img {
-    width: 50%;
-    padding: 0;
-    float:left;
-}
-#headerText {
-    margin: 0;
-    padding:0;
-    clear:both;
-}
-#headerUtility {
-    background-color:#EEEEEE;
-    text-align:left;
-    float:none;
-    width:auto;
-    margin:0;
-    padding:0;
-    width:100%;
-    margin-bottom:-3em;
-}
-#headerUtility span{
-   margin-right:55%;
-}
-#headerUtility form {
-    float:right;
-    text-align:right;
-    margin-right:0;
-    margin-top:-2.5em;
-}
-#headerUtility h1{
-    margin-top:0;
-    padding-top:0;
-}
-#footer {
-    margin: 0;
-}
-#contents img, #contentsLong img, #imgLeft, #imgRight {
-    display: none;
-}
-#skipUtilities {
-    display:block;
-}
-#utilities {
-    margin:0 0 0.8em 0 ;
-    float: none;
-    clear: both;
-    width: 100%;
-}
-#header {
-    margin: 0;
+/* Impostazioni generali per il mobile */
+
+body{
+	margin: 0;
 }
 #main {
-    margin: 0;
+	display: block;
 }
-#contents-right {
-    margin-left: 0em;
-    clear:both;
+#main > div{
+	display: block;
 }
-#navigation li {
-    margin: 0;
+
+#logo {
+  float: left;
+  width: 5em;
 }
-#contents dl, #contentsLong dl {
-    width:100%;
+
+#nav {
+  width: auto;
+	overflow: auto;
+	border-bottom: 1px solid #666666;
 }
-#contents {
-    padding: 0 0.8em 0 0.4em;
-    margin: 0;
+
+#content {
+  vertical-align: middle;
+  width: auto;
+	padding: 1em;
 }
-#navigation a, #navigation a:visited {
+
+#nav a, #nav a:visited {
     padding: 0 0.8em 0 0.8em;
     margin: 0;
 }
-#navigation a:hover {
-    background-color: #EEEEEE;
+
+#nav ul {
+    margin: 0;
 }
-#navigation {
-    float: none;
-    width: 100%;
-    margin-left:0;
-    padding: 0;
-}
-#navigation li {
+
+
+#nav li {
     display: inline;
     padding: 0.3em;
     margin: 0.1em;
     float: left;
-    border-bottom: none;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #AAAAAA;
-}
-#footer {
-    background-image: none;
-}
-#contents, #contentsLong, #contents-right {
-    margin:0;
-    padding:0.8em 0.2em 0.8em 0.2em;
-}
-#pathSelected {
-    background:none;
+    border: 1px solid #666666;
 }
 
-.mobile {
-    display:block;
+#content > h2{
+	margin-top: 0;
 }
 
-.nonCambia {}
-
-.aiutoxVisualizzazione {
-	display: none;
+#footer{
+	padding: 0.3em;
 }
 
-form fieldset div.notes {
-	display: none;
+#footer p {
+	margin: 0.3em 0 0.3em 0;
 }
-*/
+
+/* Impostazioni specifiche di correzioni per le varie pagine */
+
+/* Immagini pagine storia e contatti */
+
+.immagine-principale{
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Pagina Guestbook */
+
+#content .form_inserimento textarea{
+	width:100%;
+}
+
+/* Pagina Servizi */
+
+#content #lista_servizi{
+	margin-left: -0.5em;
+}
+
+#content #lista_servizi .row_servizi{
+	display: block;
+}
+#content #lista_servizi .column_servizi{
+	display: block;
+	width: 100%;
+	margin-bottom: 0.3em;
+}

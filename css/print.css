@@ -5,15 +5,17 @@
   src: local('Lobster Two'), local('LobsterTwo'), url(http://fonts.gstatic.com/s/lobstertwo/v7/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
 }
 
+
+
 html, body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	height: 100%;
 	font-size: 11pt;
 }
 
 h1,h2,h3{
-	font-family: Lobster Two;
+	font-family: "Lobster Two", fantasy;
 	font-weight: 500;
 	line-height: 1.1;
 }

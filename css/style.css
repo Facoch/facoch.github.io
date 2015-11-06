@@ -15,7 +15,7 @@ html, body {
   font-weight: 400;
   src: 	local('Lobster Two'),
 				local('LobsterTwo'),
-				url('/fonts/Lobster-Two-regular/Lobster-Two-regular.woff') format('woff');
+				url('./fonts/Lobster-Two-regular/Lobster-Two-regular.woff') format('woff');
 }
 @font-face {
   font-family: 'Droid Sans';
@@ -23,7 +23,7 @@ html, body {
   font-weight: 400;
   src: 	local('Droid Sans'),
 				local('DroidSans'),
-				url('/fonts/Droid-Sans-regular/Droid-Sans-regular.woff') format('woff');
+				url('./fonts/Droid-Sans-regular/Droid-Sans-regular.woff') format('woff');
 }
 
 /* Regole di stile */

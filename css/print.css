@@ -4,7 +4,7 @@
   font-weight: 400;
   src: 	local('Lobster Two'),
 				local('LobsterTwo'),
-				url('/fonts/Lobster-Two-regular/Lobster-Two-regular.woff') format('woff');
+				url('./fonts/Lobster-Two-regular/Lobster-Two-regular.woff') format('woff');
 }
 
 html, body {

@@ -13,13 +13,17 @@ html, body {
   font-family: 'Lobster Two';
   font-style: normal;
   font-weight: 400;
-  src: local('Lobster Two'), local('LobsterTwo'), url(http://fonts.gstatic.com/s/lobstertwo/v7/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+  src: 	local('Lobster Two'),
+				local('LobsterTwo'),
+				url('/fonts/Lobster-Two-regular/Lobster-Two-regular.woff') format('woff');
 }
 @font-face {
   font-family: 'Droid Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Droid Sans'), local('DroidSans'), url(http://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+  src: 	local('Droid Sans'),
+				local('DroidSans'),
+				url('/fonts/Droid-Sans-regular/Droid-Sans-regular.woff') format('woff');
 }
 
 /* Regole di stile */

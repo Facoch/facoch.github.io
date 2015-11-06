@@ -39,15 +39,17 @@ h1,h2,h3{
 	font-family: "Lobster Two", fantasy;
 	font-weight: 500;
 	line-height: 1.1;
+
 }
 
 h1{
 	text-align:center;
-	color: #76c376;
+	color: #76C376;
+
 }
 
 h2, h3{
-	color: #FFF;
+	color: #5E865E;
 }
 
 #main {
@@ -93,7 +95,7 @@ h2, h3{
 #content{
   vertical-align: middle;
 	width:80%;
-	background-color: #99CC99;
+	background-color: #F0FFDD;
 	padding-left:1.5em;
 	padding-right:1.5em;
 	padding-bottom: 2em;

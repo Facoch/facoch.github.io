@@ -117,11 +117,11 @@ a{
 	}
 
 a:hover, .checkOver{
-	color: #5D0010;
+	color: #400010;
 	}
 
 a:visited, .checkVisited{
-	color: #7A009E;
+	color: #47005D;
 }
 
 #content .form_inserimento span{

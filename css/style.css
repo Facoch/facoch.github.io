@@ -95,7 +95,8 @@ h2, h3{
 #content{
   vertical-align: middle;
 	width:80%;
-	background-color: #F0FFDD;
+	/*background-color: #F0FFDD;*/
+	background-color: #FFF;
 	padding-left:1.5em;
 	padding-right:1.5em;
 	padding-bottom: 2em;
@@ -117,7 +118,7 @@ a{
 	}
 
 a:hover, .checkOver{
-	background: #FFFAFA;
+	background: #FFF;
 	}
 
 a:visited, .checkVisited{

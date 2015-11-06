@@ -116,11 +116,11 @@ a{
 	color: #6B0315;
 	}
 
-a:hover{
+a:hover, .checkOver{
 	color: #5D0010;
 	}
 
-a:visited{
+a:visited, .checkVisited{
 	color: #7A009E;
 }
 

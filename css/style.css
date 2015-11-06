@@ -117,7 +117,7 @@ a{
 	}
 
 a:hover, .checkOver{
-	color: #400010;
+	background: #FFFAFA;
 	}
 
 a:visited, .checkVisited{

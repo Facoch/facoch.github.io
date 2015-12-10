@@ -120,11 +120,11 @@ a{
 	color: #770000;
 	}
 
-a:hover{
+a:hover, checkOver{
 	background: #FFF;
 	}
 
-a:visited{
+a:visited, checkVisited{
 	color: #350035;
 }
 

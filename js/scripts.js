@@ -38,7 +38,7 @@ function openTab(){
 
 function closeTab(){
   var el = document.getElementById('bottoni');
-  el.style.left='-110px';
+  el.style.left='-4em';
   var buttOpen = document.getElementById('open');
   buttOpen.style.display="inline-block";
   var buttClose = document.getElementById('close');

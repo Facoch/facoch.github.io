@@ -8,6 +8,8 @@
   <meta name="author" content="Facoch">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -15,6 +17,15 @@
 </head>
 
 <body>
+
+  <div id="header">
+    <div id="bottoni">
+    <img src="./down.png" id="down" onclick="sizeDown()" alt="rimpicciolisci testo"/>
+    <img src="./up.png" id="up" onclick="sizeUp()" alt="ingrandisci testo"/>
+    <i id="open" style="vertical-align:super; font-size: 25px; display:inline-block;" class="fa fa-bars" onclick="openTab()"></i>
+    <i id="close" style="vertical-align:super; font-size: 25px; display:none;" class="fa fa-close" onclick="closeTab()"></i>
+  </div>
+  </div>
   <div class="song">
     <div class="title">Il Cielo Toccherò</div>
     <div class="artist">Mumford and Sons - Noemi</div>
@@ -724,6 +735,6 @@
 
 </div>
 
-  <!--script src="js/scripts.js"></script-->
+  <script src="js/scripts.js"></script>
 </body>
 </html>

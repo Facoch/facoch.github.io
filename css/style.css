@@ -1,10 +1,29 @@
 body{
   text-align: center;
   padding-top: 3em;
+  margin: 0;
   font-family: Georgia, serif;
   background-color: rgba(241, 237, 230, 0.88)
 }
 
+#header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+#bottoni{
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: -110px;
+  padding: 10px 20px;
+  background-color:  rgba(226, 210, 179, 0.79);
+}
+#header img{
+  width: 30px;
+  padding-top: 3px;
+  margin-right: 20px;
+}
 .song{
   margin-left: 20%;
   margin-right: 20%;

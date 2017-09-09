@@ -5,8 +5,8 @@ for (var i = 0; i < elements.length; i++) {
   var txt = elements[i];
   style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
   currentSize = parseFloat(style);
-  if (currentSize<30){
-    txt.style.fontSize = (currentSize + 2) + 'px';
+  if (currentSize<50){
+    txt.style.fontSize = (currentSize + 5) + 'px';
   }
 
 }
@@ -20,7 +20,7 @@ for (var i = 0; i < elements.length; i++) {
   style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
   currentSize = parseFloat(style);
   if (currentSize>10){
-    txt.style.fontSize = (currentSize - 2) + 'px';
+    txt.style.fontSize = (currentSize - 5) + 'px';
   }
 
 }

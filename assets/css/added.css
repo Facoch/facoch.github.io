@@ -1,0 +1,86 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+/*
+*/
+
+
+
+
+header h1{
+  font-family: "Boheme Floral", cursive;
+  font-variant: normal;
+  text-transform: none;
+  font-variant-ligatures: contextual;
+  letter-spacing: normal;
+  font-size: 3.5em;
+  line-height: 1.1;
+}
+body, input, select, textarea {
+  font-family: "Optima", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+
+#header nav ul li a {
+    font-weight: bold;
+    display: block;
+    min-width: 7.5rem;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+    border-bottom: 0;
+}
+
+#header nav.use-middle:after {
+  content: none;
+
+}
+
+#header nav.use-middle ul li.is-middle {
+  border-left: inherit;
+}
+
+
+#header img{
+  max-width: 100%;
+  display: block;
+}
+
+#bg{
+  opacity: 50%;
+}
+body {
+  background: white;
+}
+
+#wrapper::before{
+  content: none;
+}
+
+
+
+
+
+
+
+#main article {
+  background-color: #FCD2D244;
+  border: 1px solid #365B76;
+}
+
+  #main article .close:before {
+
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23365B76%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+
+  }
+
+#main article h2{
+  font-family: "Optima", serif;
+
+}

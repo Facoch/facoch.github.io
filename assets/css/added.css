@@ -1,5 +1,4 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
 
 /*
 */
@@ -8,7 +7,7 @@
 
 
 header h1{
-  font-family: "Boheme Floral", cursive;
+  font-family: "boheme_floralregular", cursive;
   font-variant: normal;
   text-transform: none;
   font-variant-ligatures: contextual;
@@ -17,7 +16,7 @@ header h1{
   line-height: 1.1;
 }
 body, input, select, textarea {
-  font-family: "Optima", sans-serif;
+  font-family: "edwin","Optima", serif;
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.65;
@@ -81,6 +80,6 @@ body {
   }
 
 #main article h2{
-  font-family: "Optima", serif;
+  font-family: "edwin", "Optima", serif;
 
 }

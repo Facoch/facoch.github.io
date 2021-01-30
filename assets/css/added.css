@@ -46,7 +46,13 @@ body, input, select, textarea {
   border-left: inherit;
 }
 
+#header p.data{
+  position: absolute;
+  display: float;
+  top: -22px;
+  width: 100%;
 
+}
 #header img{
   max-width: 100%;
   display: block;

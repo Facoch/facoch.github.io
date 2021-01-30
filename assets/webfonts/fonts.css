@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'boheme_floralregular';
-    src: url('boheme_floral-webfont.woff2') format('woff2'),
-         url('boheme_floral-webfont.woff') format('woff');
+    src: url('boheme_floral.woff2') format('woff2'),
+         url('boheme_floral.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

@@ -12,8 +12,9 @@ header h1{
   text-transform: none;
   font-variant-ligatures: contextual;
   letter-spacing: normal;
-  font-size: 3.5em;
-  line-height: 1.1;
+  font-size: 4.0em;
+  line-height: 1.0;
+  font-weight: 500;
 }
 body, input, select, textarea {
   font-family: "edwin","Optima", serif;

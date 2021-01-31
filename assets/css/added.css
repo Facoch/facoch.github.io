@@ -48,8 +48,7 @@ body, input, select, textarea {
 
 #header p.data{
   position: absolute;
-  display: float;
-  top: -22px;
+  top: -1.4rem;
   width: 100%;
 
 }

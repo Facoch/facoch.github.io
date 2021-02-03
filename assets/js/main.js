@@ -4,6 +4,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function onlyDigits(value) {
+        return /^\d+$/.test(value);
+    }
+
 (function($) {
 
 	var	$window = $(window),
@@ -313,6 +317,69 @@
 						$main._hide(true);
 
 			});
+
+
+			$("#submitRSVP").click(function(event){
+		    event.preventDefault(); // cancel default behavior
+				$('#nameError').hide();
+				$('#name').removeClass('error');
+				$('#personeError').hide();
+				$('#persone').removeClass('error');
+
+				//collect data
+				var data = $('#rsvpForm').serializeArray().reduce(function(obj, item) {
+				    obj[item.name] = item.value;
+				    return obj;
+				}, {});
+				//check errors
+				var error = false;
+				if (data["name"]=="") {
+					$('#nameError').show();
+					$('#name').addClass('error');
+					error=true;
+				}
+				if (! (onlyDigits(data["persone"])) ) {
+					$('#personeError').show();
+					$('#persone').addClass('error');
+					error=true;
+				}
+				if(error){
+					return;
+				}
+
+				// Show loading thingy
+				$('#loading').show();
+				$('#submitRSVP').val("Loading...");
+				$('#submitRSVP').prop("disabled",true);
+
+				// Send to server
+				$.post( "https://europe-west3-matrimonio-303209.cloudfunctions.net/collect", data, function(res) {
+					if (res=="SUCCESS"){
+						console.log( "success" );
+						$('#rsvpForm').hide();
+						$('#successo').show();
+					}
+				  console.log( "error" );
+					$('#erroreServer').show();
+					$('#serverErrorText').text("Compila i campi Nome e Numero di Persone");
+				})
+				  .fail(function(res) {
+				    console.log( "problema" );
+						$('#erroreServer').show();
+						$('#serverErrorText').text("Ricarica la pagina e prova più tardi. Se il problema persiste, contatta gli sposi!");
+						console.log(res);
+				  })
+				  .always(function() {
+						// Hide loading thingy
+						$('#loading').hide();
+						$('#submitRSVP').val("Invia")
+						$('#submitRSVP').prop("disabled",false);
+
+				    console.log( "finished" );
+				  });
+		  });
+
+
 
 			$window.on('keyup', function(event) {
 

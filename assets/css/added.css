@@ -100,3 +100,129 @@ footer{
   font-family: "edwin", "Optima", serif;
 
 }
+
+#dataBig{
+  text-align: center;
+  font-size: 3em;
+  font-style: italic;
+  background-color: rgba(255, 245, 245,0.5);
+  padding: 1em 0;
+  border-radius: 40px;
+  position: relative;
+}
+#dataBig::after {
+  content: "";
+  background: url("../../images/wpaper_sm.jpg");
+  background-size: contain;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 40px;
+
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #889DAE !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #889DAE !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: ##889DAE !important;
+}
+
+ul.actions{
+  float: right;
+}
+
+textarea{
+  resize: none;
+}
+
+input[type="submit"].primary, input[type="reset"].primary, input[type="button"].primary, button.primary, .button.primary {
+    background-color: rgba(235, 147, 153,0.2);
+    opacity: 0.8;
+    color: #365B76 !important;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+}
+
+label{
+  letter-spacing: 0.1rem;
+}
+
+input[type="submit"].primary:hover, input[type="reset"].primary:hover, input[type="button"].primary:hover, button.primary:hover, .button.primary:hover {
+  opacity: 1;
+  background-color: rgba(235, 147, 153, 0.3);
+  box-shadow: 0 0 0 2px var(--textcolor);
+}
+
+p.error{
+  color: #9F1D35;
+  font-weight: bold;
+}
+input.error{
+  border-color: #9F1D35;
+}
+div#successo p{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 0;
+  font-size: 5px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(54,91,119, 0.2);
+  border-right: 1.1em solid rgba(54,91,119, 0.2);
+  border-bottom: 1.1em solid rgba(54,91,119, 0.2);
+  border-left: 1.1em solid #365b77;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.noScript{
+  display: none;
+}

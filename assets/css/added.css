@@ -120,14 +120,15 @@ footer{
   font-size: 3em;
   font-style: italic;
   background-color: rgba(255, 245, 245,0.5);
-  padding: 1em 0;
+  padding: 1em 1em 1em 0px;
   border-radius: 40px;
   position: relative;
+  text-align: right
 }
 #dataBig::after {
   content: "";
-  background: url("../../images/wpaper_sm.jpg");
-  background-size: contain;
+  background: url("../../images/colombo.png");
+  background-size: cover;
   opacity: 0.9;
   top: 0;
   left: 0;
@@ -239,4 +240,21 @@ div#successo p{
 
 .noScript{
   display: none;
+}
+.supersmall {
+  display: none;
+}
+
+@media screen and (max-width: 479px) {
+  #dataBig{
+    padding: 0.5em 1em;
+  }
+
+  .nosupersmall {
+    display: none;
+  }
+  .supersmall {
+    display: initial;
+  }
+
 }

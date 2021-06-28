@@ -235,7 +235,13 @@ div#successo p{
   }
 }
 
-
+.image.clear::before{
+  background-image: none;
+  background-color: transparent;
+}
+.image.clear{
+  margin: 0;
+}
 
 
 .noScript{

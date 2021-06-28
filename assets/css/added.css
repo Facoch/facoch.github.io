@@ -70,13 +70,13 @@ body {
 
 footer{
   position: absolute;
-  bottom: 3px;
-  right: 3px;
+  bottom: 4px;
+  right: 4px;
 }
 
 #footer .copyright{
   text-align: right;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 
@@ -100,6 +100,20 @@ footer{
   font-family: "edwin", "Optima", serif;
 
 }
+
+#main article a{
+  color: #9F1D35;
+  font-style: italic;
+  border-bottom: dotted 1px #9F1D35;
+
+}
+#main article a:visited{
+  color: #889DAE;
+  font-style: italic;
+  border-bottom: dotted 1px #9F1D35;
+
+}
+
 
 #dataBig{
   text-align: center;

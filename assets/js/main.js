@@ -346,6 +346,7 @@ function onlyDigits(value) {
 				if(error){
 					return;
 				}
+        console.log(data);
 
 				// Show loading thingy
 				$('#loading').show();
@@ -353,7 +354,7 @@ function onlyDigits(value) {
 				$('#submitRSVP').prop("disabled",true);
 
 				// Send to server
-				$.post( "https://europe-west3-matrimonio-303209.cloudfunctions.net/collect", data, function(res) {
+				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/collect", data, function(res) {
 					if (res=="SUCCESS"){
 						console.log( "success" );
 						$('#rsvpForm').hide();
@@ -375,7 +376,7 @@ function onlyDigits(value) {
 						$('#submitRSVP').val("Invia")
 						$('#submitRSVP').prop("disabled",false);
 
-				    console.log( "finished" );
+				    //console.log( "finished" );
 				  });
 		  });
 

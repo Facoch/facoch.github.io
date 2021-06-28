@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Filippo e Serena</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="assets/webfonts/fonts.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/added.css" />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div>
+					<h2 class="major">Risposte RSVP</h2>
+					<!--span class="image main"><img src="images/pic01.jpg" alt="" /></span-->
+					<div id="passwordform">
+						<input style="width:50%;display:inline" id="pwd" type="password"></input> <button id="send" onclick="recupera()">Recupera lista</button>
+						<p class="error" style="display:none">Password Sbagliata</p>
+					</div>
+					<ul id="listaInvitati">
+					</ul>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright"><a href="./index.html">Main site</a> - <a href="./info.html">Info</a></p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+			function getres(p) {
+				// Send to server
+
+				// if (p=="asd") {
+				// 	return [{"message":"La Serena \u00e8 intollerante al Lattosio","name":"Filippo e Serena","persone":"2"}];
+				// }else {
+				// 	return "WRONGPASS"
+				// }
+			}
+			function recupera() {
+				$(".error").hide();
+				var nodo = $("#listaInvitati");
+				nodo.empty();
+				var pass = $("#pwd").val();
+				var invitati = getres(pass);
+				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv", {"pwd":pass}, function(invitati) {
+					invitati.forEach((item, i) => {
+						nodo.append("<li>"+ item["name"]+ " - " +  item.persone + " - " +  item.message + "</li")
+					});
+					$("#passwordform").hide()
+				}).fail(function(invitati) {
+						if (invitati.responseText == "WRONGPASS") {
+							$(".error").show();
+						}else{
+							console.log(invitati)
+							$("#passwordform").append("<p class='error'>Errore. " + invitati.responseText + "</p>")
+						}
+				  })
+				  .always(function() {
+				    console.log( "finished" );
+				  });
+
+			}
+			$(document).ready(function(){
+			   $('#pwd').keypress(function(e){
+			      if(e.keyCode==13)
+			      $('#send').click();
+			    });
+			});
+
+
+			</script>
+
+	</body>
+</html>

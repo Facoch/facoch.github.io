@@ -31,6 +31,7 @@
 					<div id="passwordform">
 						<input style="width:50%;display:inline" id="pwd" type="password"></input> <button id="send" onclick="recupera()">Recupera lista</button>
 						<p class="error" style="display:none">Password Sbagliata</p>
+						<p id="loading" style="display:none">Loading...</p>
 					</div>
 					<ul id="listaInvitati">
 					</ul>
@@ -64,6 +65,8 @@
 			}
 			function recupera() {
 				$(".error").hide();
+				$("#loading").show();
+				$("#send").prop("disabled",true);
 				var nodo = $("#listaInvitati");
 				nodo.empty();
 				var pass = $("#pwd").val();
@@ -82,7 +85,8 @@
 						}
 				  })
 				  .always(function() {
-				    console.log( "finished" );
+				    $("#loading").hide();
+						$("#send").prop("disabled",false);
 				  });
 
 			}

@@ -22,9 +22,22 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+<!-- Modal for imgs full screen -->
+<div id="imgModal" class="modal">
 
+	<!-- The Close Button -->
+	<span id="closemodal" class="close">&times;</span>
+
+	<!-- Modal Content (The Image) -->
+	<img class="modal-content" id="imgInModal">
+
+	<!-- Modal Caption (Image Text)-->
+	<div id="modalCaption"></div>
+</div>
 		<!-- Wrapper -->
 			<div id="wrapper">
+
+
 
 				<!-- Header -->
 					<header id="header">
@@ -69,13 +82,15 @@
 						<!-- noi-due -->
 							<article id="noi-due">
 								<h2 class="major">Su Noi Due</h2>
-
+								<span class="image main clear"><img onclick='apriImgModal(this)' style="width:75%;display:block;margin:0 auto;"src="./images/cappuccio.jpeg" alt="Una foto di noi risalente al 2018" /></span>
+								<br/>
 								<p><strong>18/01/2017</strong> - Già ci conoscevamo, ma quella sera, con la scusa del coro, per la prima volta ci siamo proposti di creare un rapporto più profondo tra noi.</p>
 								<p><strong>31/03/2017</strong> - La prima uscita e la prima cena assieme, in occasione di uno spettacolo della Compagnia Ruzzante.</p>
-								<span class="image main clear"><img src="./images/ramoscello.png" alt="" /></span>
+								<span class="image main clear"><img src="./images/ramoscello2.png" alt="" /></span>
+								<br/>
 								<p><strong>21/04/2017</strong> - <em>L'inizio della nostra relazione.</em></p>
 								<p><strong>25/10/2019</strong> - Corso fidanzati ad Assisi. E la decisione di voler passare assieme tutta la vita nel matrimonio.</p>
-								<span class="image main clear"><img style="width:75%;display:block;margin:0 auto;"src="./images/mille_anello.jpeg" alt="" /></span>
+								<span class="image main clear"><img onclick='apriImgModal(this)' style="width:75%;display:block;margin:0 auto;"src="./images/mille_anello.jpeg" alt="I regali del 18 Gennaio: una copia de Le Mille e Una Notte, e l'anello con rubino e brillanti." /></span>
 								<br/>
 								<p><strong>18/01/2020</strong> - Passate mille e una notte da quando stavamo assieme, al santuario di Monte Berico con un anello ci siamo promessi di sposarci.</p>
 								<p><strong>02/10/2021</strong> - <em>L'inizio del nostro matrimonio.</em></p>
@@ -87,7 +102,18 @@
 							<article id="regali">
 								<h2 class="major">Lista Nozze</h2>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<p>L'anno passato ci ha insegnato che la presenza è davvero un regalo. Per questo ci teniamo a sottolineare che non è necessario regalarci qualcosa: per noi avervi e festeggiare insieme sarà già un grandissimo dono.</p>
+								<p>Se è vostro desiderio aiutarci a costruire la nostra casa e la nostra vita assieme, potete farci avere liberamente un contributo al matrimonio. Similmente, se avete un forte desiderio di farci avere un regalo fisico, non abbiamo una lista nozze ma potete contattarci per sapere cosa ci manca.</p>
+
+								<div id="listanozze">
+									<ul>
+
+										<li id="regalo1">Moulinex tostapane Superslim <span class="prezzoregalo">20€</span> - <span class="prenota">Prenota</span><span class="prenotato">Già prenotato</span></li>
+										<li id="regalo2">Excelsa tazzine shops <span class="prezzoregalo">20€</span>- <span class="prenota">Prenota</span><span class="prenotato">Già prenotato</span</li>
+										<li id="regalo3">Altro <span class="prezzoregalo">50000</span> - <span class="prenota">Prenota</span><span class="prenotato">Già prenotato</span</li>
+									</ul>
+								</div>
+
 							</article>
 
 						<!-- rsvp -->
@@ -155,6 +181,85 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			$( document ).ready(function() {
+				var regalihtml= [1,2,3];
+
+
+				$.post( "https://europe-west3-matrimonio-303209.cloudfunctions.net/listregalipublic", {}, function(regali) {
+					regalihtml.forEach((item, i) => {
+						regali.forEach((itemserv, j) => {
+							if(item == itemserv["id"]){
+								if(itemserv["taken"]==true){
+									$("#regalo"+item).addClass("regalotaken");
+								}
+							}
+						});
+
+
+					});
+				}).fail(function(invitati) {
+
+					})
+					.always(function() {
+
+					});
+			});
+
+			$(".prenota").click(function(e){
+				if ($(this).parent()[0] == $("#prenotaregalo").parent()[0]){
+					return
+				}
+				$("#prenotaregalo").attr("id","prenotaregaloold");
+				$("#prenotaregaloold").hide("fast",function(){
+					$("#prenotaregaloold").remove();
+				});
+				var item = $(this).parent();
+
+				var id = item.attr('id');
+				item.append("<div style='display:none' id='prenotaregalo'><div class='divimgregalo'><img onclick='apriImgModal(this)' id='imgregalo' class='imgregalo' src='./images/regali/"+id+".jpg'></div><div style='display:inline-block'>Prenota</div></div>")
+				$("#prenotaregalo").show("slow");
+				$("#prenotaregalo")[0].scrollIntoView();
+
+
+
+			});
+
+
+			// Get the modal
+			var modal = document.getElementById("imgModal");
+			var captionText = document.getElementById("modalCaption");
+
+			function apriImgModal(i) {
+
+				// Get the image and insert it inside the modal - use its "alt" text as a caption
+				var img = i;
+				console.log(img.alt);
+				var modalImg = document.getElementById("imgInModal");
+			  modal.style.display = "block";
+			  modalImg.src = img.src;
+				captionText.innerHTML = img.alt;
+			}
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementById("closemodal");
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+			// When the user clicks on modal outside img, close the modal
+			modal.onclick = function(ev) {
+				console.log(ev.target)
+				if(ev.target!=$("#imgInModal")[0])	{
+					modal.style.display = "none";
+				}
+			}
+
+
+
+			</script>
+
 
 	</body>
 </html>

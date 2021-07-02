@@ -54,15 +54,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			function getres(p) {
-				// Send to server
-
-				// if (p=="asd") {
-				// 	return [{"message":"La Serena \u00e8 intollerante al Lattosio","name":"Filippo e Serena","persone":"2"}];
-				// }else {
-				// 	return "WRONGPASS"
-				// }
-			}
+			
 			function recupera() {
 				$(".error").hide();
 				$("#loading").show();
@@ -70,7 +62,6 @@
 				var nodo = $("#listaInvitati");
 				nodo.empty();
 				var pass = $("#pwd").val();
-				var invitati = getres(pass);
 				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv", {"pwd":pass}, function(invitati) {
 					invitati.forEach((item, i) => {
 						nodo.append("<li>"+ item["name"]+ " - " +  item.persone + " - " +  item.message + "</li")

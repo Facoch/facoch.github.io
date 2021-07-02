@@ -311,10 +311,12 @@ function onlyDigits(value) {
 
 		// Events.
 			$body.on('click', function(event) {
+        if(event.target!=$("#imgModal")[0] && !$("#imgModal")[0].contains(event.target)){
+          // Article visible? Hide.
+  					if ($body.hasClass('is-article-visible'))
+  						$main._hide(true);
+        }
 
-				// Article visible? Hide.
-					if ($body.hasClass('is-article-visible'))
-						$main._hide(true);
 
 			});
 

@@ -1,0 +1,27 @@
+{ "lista": [
+       {
+           "id": 1,
+           "descr": "Tostapane Ultracompact Moulinex",
+           "prezzo": 20
+       },
+       {
+         "id": 2,
+         "descr": "6 Tazzine Excelsa 'shops'",
+         "prezzo": 20
+       },
+       {
+         "id": 3,
+         "descr": "12 Bicchieri Generation Pasabahce",
+         "prezzo": 28
+       },
+       {
+         "id": 4,
+         "descr": "Set 60 Posate Philadelphia WMF",
+         "prezzo": 110
+       },
+       {
+         "id": 5,
+         "descr": "Set 36 Piatti Spighe Barazzoni",
+         "prezzo": 60
+       }
+  ]}

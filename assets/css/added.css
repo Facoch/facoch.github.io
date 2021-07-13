@@ -317,14 +317,73 @@ div#successo p{
   border-radius: 10px;
   margin: 0;
   display: inline-block;
-
+  position: absolute;
 }
 
 
 div#prenotaregalo{
-  padding: 1em;
-
+  padding: 0.5em 0px;
+  min-height: 170px;
 }
+
+.regaloTesto{
+  width: 100%;
+  padding-left: 165px;
+  vertical-align: middle;
+}
+.regaloTesto p{
+  margin-bottom: 1em;
+}
+
+#bottoniRegali {
+  width: 100%;
+  padding-left: 165px;
+}
+
+#bottoniRegali input{
+  width: 60%;
+  vertical-align: middle;
+  display: inline;
+}
+
+#bottoniRegali button{
+  vertical-align: middle;
+  display: inline;
+  margin-left: 1em;
+}
+
+@media only screen and (max-width: 600px){
+  .regaloTesto p{
+    min-height: 150px;
+  }
+  #bottoniRegali {
+    width: 100%;
+    padding-left: 0em;
+  }
+  #bottoniRegali input{
+    width: 70%;
+  }
+  #bottoniRegali button{
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 480px){
+  div#prenotaregalo{
+    margin-left: -1.5em;
+  }
+  .divimgregalo {
+    width: 100%;
+    position: static;
+    text-align: center;
+  }
+  .regaloTesto{
+    padding-left: 0em;
+  }
+  .regaloTesto p{
+    min-height: 0em;
+  }
+}
+
 
 .imgcentrata{
   width: 100%;
@@ -336,7 +395,16 @@ div#prenotaregalo{
   transform: translateX(-50%);
 }
 
+input.erroreNome{
+  border: 3px solid rgb(159, 29, 53);
+}
+input.erroreNome::placeholder{
+  color: rgb(104, 86, 89) !important;
+}
 
+code{
+  font-weight: bold;
+}
 
 /* The Modal (background) */
 .modal {
@@ -359,6 +427,7 @@ div#prenotaregalo{
   display: block;
   width: 80%;
   max-width: 600px;
+
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -419,4 +488,76 @@ div#prenotaregalo{
   .modal-content {
     width: 100%;
   }
+}
+
+
+
+
+
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
+    }
+}
+
+.loadingdots span {
+    font-size: 2em;
+    line-height: 0.7em;
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.loadingdots span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.loadingdots span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
 }

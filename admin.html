@@ -23,18 +23,22 @@
 	</head>
 	<body class="is-preload">
 
+<div id="imgModal"></div>
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<div>
 					<h2 class="major">Risposte RSVP</h2>
-					<!--span class="image main"><img src="images/pic01.jpg" alt="" /></span-->
+
+					<ul id="listaInvitati">
+					</ul>
+					<h2 class="major">Risposte Lista Nozze</h2>
+					<ul id="listaRegali">
+					</ul>
 					<div id="passwordform">
 						<input style="width:50%;display:inline" id="pwd" type="password"></input> <button id="send" onclick="recupera()">Recupera lista</button>
 						<p class="error" style="display:none">Password Sbagliata</p>
 						<p id="loading" style="display:none">Loading...</p>
 					</div>
-					<ul id="listaInvitati">
-					</ul>
 				</div>
 
 				<!-- Footer -->
@@ -54,25 +58,49 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			
+
+			var nomiRegali = {
+			}
+			$( document ).ready(function() {
+
+
+				});
+
+
+
+
+
+
+
+
 			function recupera() {
 				$(".error").hide();
 				$("#loading").show();
 				$("#send").prop("disabled",true);
-				var nodo = $("#listaInvitati");
-				nodo.empty();
+
 				var pass = $("#pwd").val();
-				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv", {"pwd":pass}, function(invitati) {
+				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv", {"pwd":pass}, function(results) {
+					var invitati = results["rsvp"];
+					var nodo = $("#listaInvitati");
+					nodo.empty();
 					invitati.forEach((item, i) => {
 						nodo.append("<li>"+ item["name"]+ " - " +  item.persone + " - " +  item.message + "</li")
 					});
+					var nodo2 = $("#listaRegali");
+					nodo2.empty();
+					var regali = results["regali"];
+					regali.forEach((item, i) => {
+						if(item.taken){
+							nodo2.append("<li>"+ nomiRegali[item.id]+ " - " +  item.persona + "</li")
+						}
+					});
 					$("#passwordform").hide()
-				}).fail(function(invitati) {
-						if (invitati.responseText == "WRONGPASS") {
+				}).fail(function(results) {
+						if (results.responseText == "WRONGPASS") {
 							$(".error").show();
 						}else{
-							console.log(invitati)
-							$("#passwordform").append("<p class='error'>Errore. " + invitati.responseText + "</p>")
+							console.log(results)
+							$("#passwordform").append("<p class='error'>Errore. " + results.responseText + "</p>")
 						}
 				  })
 				  .always(function() {
@@ -82,6 +110,14 @@
 
 			}
 			$(document).ready(function(){
+
+				$.getJSON('listanozze.json', function(data) {
+					 var l = data.lista;
+					 l.forEach((item, i) => {
+							nomiRegali[item.id]= item.descr;
+					 });
+					});
+
 			   $('#pwd').keypress(function(e){
 			      if(e.keyCode==13)
 			      $('#send').click();

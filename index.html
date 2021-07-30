@@ -56,7 +56,7 @@
 						<nav>
 							<ul>
 								<li><a href="#data">La Data</a></li>
-								<li><a href="#noi-due">Noi Due</a></li>
+								<li><a id="noiduetrigger" href="#noi-due">Noi Due</a></li>
 								<li><a href="#regali">Regali</a></li>
 								<li><a href="#rsvp">RSVP</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
@@ -82,7 +82,7 @@
 						<!-- noi-due -->
 							<article id="noi-due">
 								<h2 class="major">Su Noi Due</h2>
-								<span class="image main clear"><img onclick='apriImgModal(this)' style="width:75%;display:block;margin:0 auto;"src="./images/cappuccio.jpeg" alt="Una foto di noi risalente al 2018" /></span>
+								<div class="image main clear"><img id='imgnoi' onclick='apriImgModal(this)' style="width:75%;display:block;margin:0 auto;"src="./images/cappuccio2.jpeg" alt="Una foto di noi risalente al 2018" /><!--img id='imgnoidis' onclick='apriImgModal(this)' style="width:75%;display:block;margin:0 auto;"src="./images/cappucciodis.jpg" alt="Una disegno di noi risalente al 2018" /--></div>
 								<br/>
 								<p><strong>18/01/2017</strong> - Dopo un incontro ci siamo fermati a parlare, perché Filippo voleva chiedere un aiuto con il lavoro del coro. Così abbiamo cominciato a sentirci più spesso, a pranzare insieme in università, a studiare assieme in sessione.</p>
 								<p><strong>31/03/2017</strong> - La prima uscita e la prima cena in due, in occasione di uno spettacolo della Compagnia Ruzzante.</p>
@@ -103,7 +103,7 @@
 						<!-- regali -->
 							<article id="regali">
 								<h2 class="major">Lista Nozze</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<span class="image main clear"><img src="./images/casina.png" alt="" /></span>
 								<p>L'anno passato ci ha insegnato che la presenza è davvero un regalo. Per questo ci teniamo a sottolineare che non è necessario regalarci qualcosa: per noi avervi e festeggiare insieme sarà già un grandissimo dono.</p>
 								<p>Se è vostro desiderio aiutarci a costruire la nostra casa e la nostra vita assieme, potete farci avere liberamente un contributo al matrimonio. Similmente, se avete un desiderio di farci avere un regalo fisico, che ci ricordi di voi e di questo giorno, qui sotto c'è una piccola lista nozze.</p>
 
@@ -226,7 +226,7 @@
 `
  						item.append(aggiunta)
  						$("#prenotaregalo").show("slow");
- 						$("#prenotaregalo")[0].scrollIntoView();
+ 						//$("#prenotaregalo").parent()[0].scrollIntoView();
 
 
 
@@ -256,7 +256,8 @@
 					});
 
 
-			});
+
+			});// Doc ready
 
 
 
@@ -303,7 +304,7 @@
 					//send to server
 					$("#bottoniRegali").empty();
 					$("#bottoniRegali").append("<p class='loadingdots'>Loading <span>.</span><span>.</span><span>.</span></p>")
-				
+
 
 					$.post( "https://europe-west3-matrimonio-303209.cloudfunctions.net/prenotaregalo", {"id":id,"name":nome}, function(response) {
 						$("#prenotaistruzioni").text("Grazie mille! Hai prenotato il regalo. Per regalarlo effettivamente, inviaci un bonifico dell'importo corrispondente:");
@@ -330,6 +331,12 @@
 			}//prenotaregalo
 
 
+
+			$("#noiduetrigger").click(function(e){
+
+				//$("#imgnoi").delay(1000).fadeTo(5000,0);
+
+			});
 
 			</script>
 

@@ -119,7 +119,7 @@ footer{
   text-align: center;
   font-size: 3em;
   font-style: italic;
-  background-color: rgba(255, 245, 245,0.5);
+  background-color: rgba(255, 245, 245,0.2);
   padding: 1.2em 1em 1.2em 0px;
   border-radius: 40px;
   position: relative;
@@ -127,9 +127,9 @@ footer{
 }
 #dataBig::after {
   content: "";
-  background: url("../../images/colombo.png");
+  background: url("../../images/colombo.jpg");
   background-size: cover;
-  opacity: 0.9;
+  opacity: 1;
   top: 0;
   left: 0;
   bottom: 0;
@@ -280,6 +280,20 @@ div#successo p{
   display: none;
 }
 
+
+#imgnoi{
+  opacity: 1;
+}
+#imgnoidis {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    height: 100%;
+}
 
 
 /* Regali  */

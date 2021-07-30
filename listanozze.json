@@ -1,8 +1,8 @@
 { "lista": [
        {
-           "id": 1,
-           "descr": "Tostapane Ultracompact Moulinex",
-           "prezzo": 20
+         "id": 1,
+         "descr": "Smart Tv 42'' Metz",
+         "prezzo": 210
        },
        {
          "id": 2,
@@ -12,7 +12,7 @@
        {
          "id": 3,
          "descr": "12 Bicchieri Generation Pasabahce",
-         "prezzo": 28
+         "prezzo": 30
        },
        {
          "id": 4,
@@ -23,5 +23,76 @@
          "id": 5,
          "descr": "Set 36 Piatti Spighe Barazzoni",
          "prezzo": 60
+       },
+       {
+         "id": 6,
+         "descr": "Minipimer MultiQuick3 Braun",
+         "prezzo": 25
+       },
+       {
+         "id": 7,
+         "descr": "Contenitore Sale lPB",
+         "prezzo": 15
+       },
+       {
+         "id": 8,
+         "descr": "Contenitore Zucchero lPB",
+         "prezzo": 15
+       },
+       {
+         "id": 9,
+         "descr": "Contenitore Sale Grosso lPB",
+         "prezzo": 15
+       },
+       {
+         "id": 10,
+         "descr": "Fornetto Pizza Ariete 909",
+         "prezzo": 90
+       },
+       {
+         "id": 11,
+         "descr": "kCook Multi Smart Kenwood",
+         "prezzo": 550
+       },
+       {
+         "id": 12,
+         "descr": "Pentola a pressione Bonita+ 7L Barazzoni",
+         "prezzo": 60
+       },
+       {
+         "id": 13,
+         "descr": "Gasatore Sodastream Spirit",
+         "prezzo": 65
+       },
+       {
+         "id": 14,
+         "descr": "Tavolo Pieghevole Giardino",
+         "prezzo": 150
+       },
+       {
+         "id": 15,
+         "descr": "Sbattitore Elettrico Girmi",
+         "prezzo": 25
+       },
+       {
+         "id": 16,
+         "descr": "Set 18 Calici Opera RCR",
+         "prezzo": 55
+       },
+       {
+         "id": 17,
+         "descr": "Vaporella Simply Polti",
+         "prezzo": 80
+       },
+       {
+         "id": 18,
+         "descr": "Ceppo coltelli Ballarini",
+         "prezzo": 60
+       },
+       {
+         "id": 19,
+         "descr": "Ring Fit Adventure",
+         "prezzo": 70
        }
+
   ]}

@@ -93,6 +93,16 @@
          "id": 19,
          "descr": "Ring Fit Adventure",
          "prezzo": 70
+       },
+       {
+         "id": 20,
+         "descr": "Asse da Stiro Polti Vaporella",
+         "prezzo": 70
+       },
+       {
+         "id": 21,
+         "descr": "Set Arredo Bagno Clothilde",
+         "prezzo": 40
        }
 
   ]}

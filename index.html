@@ -196,7 +196,7 @@
 				   var l = data.lista;
 					 l.forEach((item, i) => {
 					 		regalihtml.push(item.id);
-							$("#ullistanozze").append("<li id='regalo"+item.id+"'>"+item.descr+" <span class='prezzoregalo'>"+item.prezzo+"€</span> - <span class='prenota'>Prenota</span><span class='prenotato'>Già prenotato</span></li>")
+							$("#ullistanozze").append("<li class='regalotaken' id='regalo"+item.id+"'>"+item.descr+" <span class='prezzoregalo'>"+item.prezzo+"€</span> - <span class='prenota'>Prenota</span><span class='prenotato'>Già prenotato</span></li>")
 
 
 					 });
@@ -238,26 +238,6 @@
 
 				});
 
-
-
-				$.post( "https://europe-west3-matrimonio-303209.cloudfunctions.net/listregalipublic", {}, function(regali) {
-					regalihtml.forEach((item, i) => {
-						regali.forEach((itemserv, j) => {
-							if(item == itemserv["id"]){
-								if(itemserv["taken"]==true){
-									$("#regalo"+item).addClass("regalotaken");
-								}
-							}
-						});
-
-
-					});
-				}).fail(function(invitati) {
-
-					})
-					.always(function() {
-
-					});
 
 
 

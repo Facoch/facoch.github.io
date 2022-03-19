@@ -1,0 +1,11 @@
+/* // NO SCRIPT */
+
+.noScript{
+  display: block !important;
+}
+#rsvpForm{
+  display: none !important;
+}
+#sticker{
+  display: none !important;
+}

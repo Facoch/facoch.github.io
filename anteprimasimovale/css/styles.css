@@ -1,0 +1,283 @@
+/* NO SCRIPT */
+
+.noScript{
+  display: none;
+}
+
+/* Main CSS: */
+
+body{
+  text-align: center;
+  color: rgb(75, 86, 118);
+  background-color: rgb(220, 227, 245);
+  font-family: "Didot",serif;
+  font-size: 18px;
+}
+@media all and (max-width: 480px) {
+  body{
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 390px) {
+  body{
+    font-size: 12px;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+.mobileonly{
+  display: none;
+}
+@media all and (max-width: 840px) {
+  .mobileonly{
+    display: initial;
+  }
+  .notmobile{
+    display: none !important;
+  }
+}
+
+body > div{
+  background-color: rgb(220, 227, 245);
+    padding: 1.5em 1em 3em 1em;
+}
+body > div.odd{
+  background-color: #EAE8E8;
+}
+div.imgdiv{
+  padding: 0;
+}
+
+h1, h2, .titolo {
+  font-family: "Bellota Text", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 1em;
+  padding-top: 50px;
+  padding-bottom: 45px;
+  margin-bottom: 20px;
+  background-image: url(../img/leaf.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+@media all and (max-width: 480px) {
+  h1, h2, .titolo {
+    letter-spacing: 0.7em;
+  }
+}
+h3{
+  font-family: "Bellota Text", sans-serif;
+  text-transform: uppercase;
+}
+
+.button{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  width: 150px;
+  margin: 0.5em auto;
+  padding: 1em 2em;
+  font-family: "Bellota Text", sans-serif;
+  background-color: #F0F0F0;
+  border-radius: 4px;
+}
+.button:hover{
+  background-color: #D0D0D0;
+}
+.button:disabled{
+  opacity: 0.7;
+}
+.button:hover:disabled{
+  background-color: #F0F0F0;
+}
+
+
+/* SEZIONI */
+
+
+div#biglietto{
+  margin-left: auto;
+  margin-right: auto;
+  height: 105vw;
+  width: 100vw;
+  max-height: 600px;
+  max-width: 630px;
+  background-color: white;
+}
+div#biglietto p{
+  color: black;
+  text-transform: uppercase;
+  padding: 0 20%;
+  line-height: 1.2;
+}
+@media all and (max-width: 630px) {
+  div#biglietto p{
+    padding: 0 10%;
+  }
+}
+div#biglietto div#dataora{
+  width: 70%;
+  margin:auto;
+  margin-top: 2em;
+}
+@media all and (max-width: 390px) {
+  div#biglietto div#dataora{
+    margin-top: 1em;
+  }
+}
+
+div#biglietto div#dataora p{
+  display: inline-block;
+  width: 30%;
+  padding: 10px 0;
+  vertical-align: middle;
+}
+div#biglietto div#dataora p.middle{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+p#annuncio{
+  font-size: 1.1em;
+}
+div#biglietto p.nomesposi{
+  line-height: 1;
+  padding: 0;
+  display: inline-block;
+  margin-top: 3em;
+  width: 40%;
+}
+p#nomelui{
+  text-align: left;
+}
+p#nomelei{
+  text-align: right;
+}
+span.nome{
+  font-size: 1.8em;
+}
+span.cognome{
+  font-size: 1.2em;
+}
+
+div#frasediv{
+  font-size: 2em;
+  line-height: 2;
+  padding: 3em 1em;
+}
+div#frasediv p#firma{
+  font-size: 0.7em;
+  line-height: 1.3;
+}
+@media all and (max-width: 900px) {
+  #capofrase{
+    display: none;
+  }
+}
+
+div.half{
+  vertical-align: middle;
+  display: inline-block;
+  width: 40%;
+  min-width: 400px;
+  overflow: hidden;
+}
+
+div.half p{
+  font-size: 1.5em;
+  line-height: 1.8;
+  letter-spacing: 3px;
+}
+div.half img{
+  height: 300px;
+}
+
+div.half.mobileonly{
+  display: none;
+}
+@media all and (max-width: 840px) {
+  div.half.mobileonly{
+    display: inline-block;
+  }
+  .notmobile{
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 480px) {
+  div.half{
+    min-width: 200px;
+    width: 90%;
+  }
+  div.half img{
+    height: 200px;
+  }
+}
+.location{
+  font-family: "Marck Script", cursive;
+  margin: 0.5em;
+}
+div.half p.location{
+  color: #c64c4c;
+}
+div.half p.location.chiesa{
+  color: #2c699f;
+
+}
+div.half p.address{
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}
+
+
+div#rsvp p.verrai{
+  font-size: 1.2em;
+  margin-bottom: 2.5em;
+}
+
+div#stacco{
+  height: 780px;
+  max-height: 133vw;
+  background-image: url(../img/specchio2.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+div.lista p{
+  width: 60%;
+  min-width: 600px;
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+div.lista br{
+  margin-bottom: 5px;
+}
+@media all and (max-width: 840px) {
+  div.lista p{
+    width: 90%;
+    min-width: 0px;
+  }
+}
+span.codice{
+  font-family: "Bellota Text", monospace;
+  font-weight: 200;
+}
+
+
+.footer a, .footer a:visited{
+  color: inherit;
+}
+.footer a:hover{
+  color: #2c699f;
+}
+
+
+#successo p{
+  font-size: 2em;
+  line-height: 1.5;
+}

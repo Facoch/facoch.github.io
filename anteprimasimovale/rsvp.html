@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RSVP - Simo e Vale</title>
+  <meta name="description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta name="author" content="Filippo Carnovalini">
+
+  <!-- <meta property="og:title" content="Simo e Vale">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta property="og:image" content="image.png"> -->
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400&family=Marck+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/rsvp.css?v=1.0">
+  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+
+</head>
+
+<body>
+
+
+  <div class=""> <!-- Ricevimento -->
+  <h2 class="titolo">Let's Party</h2>
+  <!-- rsvp -->
+
+      <div class="noScript">
+        <p class="noScript">Non hai javascript attivo sul tuo Browser,
+          per cui non puoi usare il form di conferma online.</p>
+        <p class="noScript">Contatta gli
+          sposi per confermare la tua presenza!</p>
+          <a href="./index.html" class="button noScript">Torna alla Home</a>
+      </div>
+      <form id="rsvpForm" method="post" action="#">
+        <p>Fateci sapere se potrete esserci al ricevimento di nozze, e se avete esigenze particolari di cui tenere conto.</p>
+        <div class="fields">
+          <div class="field nome">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" />
+            <p id="nameError" class="error" style="display:none">Campo obbligatorio!</p>
+          </div>
+          <div class="field numero">
+            <label class="long" for="persone">Numero di persone</label>
+            <input type="number" name="persone" id="persone" value="1">
+            <p id="personeError" class="error" style="display:none">Scrivi un numero.</p>
+          </div>
+          <div class="field">
+            <label for="message">Note</label>
+            <textarea oninput=setTextareaHeight(this) placeholder="Intolleranze, allergie, età dei bambini, necessità di seggiolini..." name="message" id="message" type="text"></textarea>
+            <!-- <textarea oninput='this.style.height = "";let emi =window.getComputedStyle(this).fontSize.match(/\d+/)[0]; console.log(emi); this.style.height = (this.scrollHeight - 2*emi)+ "px"' placeholder="Intolleranze, allergie, età dei bambini, necessità di seggiolini..." name="message" id="message" type="text"></textarea> -->
+          </div>
+        </div>
+        <div id="erroreServer" style="display:none">
+          <p class="error">Errore: <span id="serverErrorText"></span></p>
+        </div>
+        <ul class="actions">
+
+
+          <li class="confirm"><input type="button" value="Invia" class="primary button" id="submitRSVP"/></li><li class="confirm" id="loading" style="display:none"><div  class="confirm loader notmobile"></div></li>
+          <li class="annulla"><a href="./index.html" class="button">Torna alla Home</a></li>
+        </ul>
+
+      </form>
+
+      <div id="successo" style="display:none">
+        <br/>
+        <p>Conferma inviata con successo.</p>
+        <p>Ci vediamo il 18 Giugno!</p><br/>
+        <a href="./index.html" class="button">Torna alla Home</a>
+      </div>
+
+      <div class="notmobile" id="sticker">
+        <h3>Ricevimento</h3>
+        <hr/>
+        <p>
+          18 Giugno, ore 13:00<br/>
+          <em>Villa Sangiantoffetti Rigon</em><br/>
+          Viale Crispi 2<br/>
+          Ponte di Barbarano
+        </p>
+      </div>
+  </div>
+  <div class="odd"> <!-- Contatti -->
+    <h3>Contatti</h3>
+    <br/>
+    <p>Simone: <span class="codice">348 3498830</span> - Valentina: <span class="codice">333 7842279</span></p>
+  </div>
+
+  <div class="footer"> <!-- Footer -->
+    <p>© 2022 Cagliani Valentina e Rizzato Simone</p>
+    <hr style="width:60%;border:1px dotted lightgray"/>
+    <br/>
+      <p>Go to the <a href="admin.html">admin<a> area</p>
+  </div>
+  <!-- your content here... -->
+
+  <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

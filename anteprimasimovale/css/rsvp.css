@@ -1,0 +1,199 @@
+form{
+  width: 70%;
+}
+@media all and (max-width: 840px) {
+  form{
+    width: 100%;
+  }
+}
+
+form > p{
+  width: 85%;
+
+  margin: auto;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+
+.fields{
+  width: 90%;
+  margin: auto;
+  font-family: inherit;
+  vertical-align: bottom;
+}
+.field{
+  display: inline-block;
+  width: 99%;
+  margin: auto;
+  position: relative;
+}
+.field.nome{
+  width: 65%;
+}
+.field.numero{
+  width: 33%;
+}
+
+.field label{
+  width: calc(100% - 1em);
+  margin: auto;
+  display: block;
+  font-size: 0.8em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+
+}
+
+.field input, .field textarea{
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: calc(100% - 4em);
+  min-height: 45px;
+  padding: 0 1em;
+  font-family: inherit;
+  vertical-align: middle;
+  font-size: 1em;
+  margin-bottom:2em;
+}
+.field textarea{
+  min-height: 0;
+  height: 1em;
+  resize: none;
+  padding: 1em;
+}
+/* .field input[name="message"]{
+  word-break: break-word;
+  word-break: break-all;
+} */
+
+
+form ul{
+  width: 84%;
+  margin: auto;
+  text-align: right;
+}
+form ul li{
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+form ul li.annulla{
+  float: left;
+}
+@media all and (max-width: 480px) {
+  form ul li {
+    width: 100%;
+  }
+  form ul li input.button{
+    width: 100%;
+  }
+  form ul li a.button{
+    width: initial;
+  }
+  form ul li.annulla{
+    float: initial;
+  }
+}
+p.error{
+  position: absolute;
+  bottom: 0.7em;
+  left: 0;
+  right: 0;
+  padding: 0;
+  color: #c64c4c;
+  white-space: nowrap;
+}
+input.error{
+  border: 1px solid #c64c4c;
+}
+
+
+div#sticker{
+  width: 25%;
+  max-width: 300px;
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  line-height: 1.2;
+  padding: 1em;
+  background-color: #F0F0F0;
+  top: 250px;
+  left: 68%;
+  border: 1px solid lightgray;
+
+}
+div#sticker em{
+  line-height: 2.3;
+  font-style: italic;
+}
+div#sticker hr{
+  width: 90%;
+  margin: 1em 0;
+  border: none;
+  border-top: 2px solid lightgray;
+}
+
+div.odd > h3{
+  margin: 1em;
+}
+#erroreServer{
+  position: static;
+  text-align: right;
+  width: 84%;
+  margin:auto;
+}
+#erroreServer p.error{
+  position:static;
+  white-space: break-spaces;
+
+}
+
+
+
+
+
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 0;
+  margin-left: 3em;
+  font-size: 5px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(54,91,119, 0.2);
+  border-right: 1.1em solid rgba(54,91,119, 0.2);
+  border-bottom: 1.1em solid rgba(54,91,119, 0.2);
+  border-left: 1.1em solid #365b77;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

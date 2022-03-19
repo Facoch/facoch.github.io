@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RSVP - Simo e Vale</title>
+  <meta name="description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta name="author" content="Filippo Carnovalini">
+
+  <!-- <meta property="og:title" content="Simo e Vale">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta property="og:image" content="image.png"> -->
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400&family=Marck+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+  <style>
+    em{
+      font-weight:bold;
+    }
+    #listaInvitati th{
+      padding:10px 1em;
+      font-weight: bold;
+    }
+    #listaInvitati td{
+      padding:10px 1em;
+    }
+  </style>
+</head>
+
+<body style="background-color:rgb(220, 227, 245)">
+
+		<!-- Wrapper -->
+				<div class="odd">
+					<h2>Risposte RSVP</h2>
+
+          <div id="passwordform">
+						<input  placeholder="Password" style="width:40%;max-width:200px;display:inline; padding: 0 1em;" id="pwd" type="password"></input> <button id="send" onclick="recupera()">Recupera lista</button>
+						<p class="error" style="color:#c64c4c;display:none">Password Sbagliata</p>
+						<p id="loading" style="display:none">Loading...</p>
+					</div>
+
+					<table id="listaInvitati"  style="text-align:left;padding:0 4em;width:100%">
+            <tr><th style="width:25%">Nome</th><th style="width:10%">Numero</th><th style="width:65%">Note</th></tr>
+					</table>
+
+          
+					<!-- <h2 class="major">Risposte Lista Nozze</h2>
+					<ul id="listaRegali">
+					</ul> -->
+
+				</div>
+
+        <div class="footer"> <!-- Footer -->
+          <p>© 2022 Cagliani Valentina e Rizzato Simone</p>
+          <hr style="width:60%;border:1px dotted lightgray"/>
+          <br/>
+            <p>Go back to the <a href="index.html">home<a> page</p>
+        </div>
+
+		<!-- Scripts -->
+    <script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+			<script>
+
+
+
+			function recupera() {
+				$(".error").hide();
+				$("#loading").show();
+				$("#send").prop("disabled",true);
+
+        // $(".error").show();
+        // 	$("#passwordform").append("Devo ancora aggiungere questa parte -Facoch");
+        // console.log("recupera");
+        //
+        // return;
+				var pass = $("#pwd").val();
+				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv-vs", {"pwd":pass}, function(results) {
+					var invitati = results["rsvp"];
+					var nodo = $("#listaInvitati");
+					//nodo.empty();
+					// invitati.forEach((item, i) => {
+					// 	nodo.append("<li><em>"+ item["name"]+ "</em> - <span class='codice'>" +  item.persone + "</span> - " +  item.message + "</li>")
+					// });
+          invitati.forEach((item, i) => {
+						nodo.append("<tr><td>"+ item["name"]+ "</td><td><span class='codice'>" +  item.persone + "</span></td><td>" +  item.message + "</td></tr>")
+					});
+					// var nodo2 = $("#listaRegali");
+					// nodo2.empty();
+					// var regali = results["regali"];
+					// regali.forEach((item, i) => {
+					// 	if(item.taken){
+					// 		nodo2.append("<li>"+ nomiRegali[item.id]+ " - " +  item.persona + "</li")
+					// 	}
+					// });
+					$("#passwordform").hide()
+				}).fail(function(results) {
+						if (results.responseText == "WRONGPASS") {
+							$(".error").show();
+						}else{
+							console.log(results)
+							$("#passwordform").append("<p class='error'>Errore. " + results.responseText + "</p>")
+						}
+				  })
+				  .always(function() {
+				    $("#loading").hide();
+						$("#send").prop("disabled",false);
+				  });
+
+			}
+			$(document).ready(function(){
+
+			   $('#pwd').keypress(function(e){
+			      if(e.keyCode==13)
+			      $('#send').click();
+			    });
+			});
+
+
+			</script>
+
+	</body>
+</html>

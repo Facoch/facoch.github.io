@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Simo e Vale</title>
+  <meta name="description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta name="author" content="Filippo Carnovalini">
+
+  <!-- <meta property="og:title" content="Simo e Vale">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="Simone e Valentina annunciano il loro matrimonio che si svolgerà a Padova il 18 Giugno.">
+  <meta property="og:image" content="image.png"> -->
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400&family=Marck+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/slider.css?v=1.0">
+
+</head>
+
+<body>
+
+  <div id="copertina" class="imgdiv"> <!-- Copertina -->
+    <div id="biglietto" class="">
+
+      <p id="nomelui" class="nomesposi"><span class="nome">Simone</span><br/><span class="cognome">Rizzato</span></p>
+      <p id="nomelei" class="nomesposi"><span class="nome">Valentina</span> <br/><span class="cognome">Cagliani</span></p>
+      <img src="./img/logoq.png" alt="" width="40%">
+      <p id="annuncio">Annunciano con gioia il loro matrimonio<br/> che si svolgerà a Padova</p>
+      <div id="dataora">
+        <p>Sabato</p>
+        <p class="middle">18<br/>Giugno<br/>2022</p>
+        <p>ore 11:00</p>
+      </div>
+
+    </div>
+
+  </div>
+  <div id="frasediv" class="odd"> <!-- Frase -->
+    <p id="frase">"È una gratitudine che caratterizza la mia vita,<br id="capofrase"/> perciò non ho paura di darla via, di darla tutta"</p>
+    <p id="firma">(Enzo Piccinini)</p>
+  </div>
+
+
+  <div id="slidersection" class="imgdiv"> <!-- SLIDER -->
+    <div class="backtrickslider"></div>
+    <div id="slider">
+  <a href="#" class="control control_next">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+	25,10 48,41 25,70 "/>
+  </svg>
+</a>
+  <a href="#" class="control control_prev"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+  <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+25,70 2,41 25,10 "/>
+</svg></a>
+  <ul>
+    <li style="background-image: url(./img/archi.jpeg);"></li>
+
+    <li style="background-image: url(./img/mare.jpeg);"></li>
+    <!-- Slider needs at least three so I repeat the first two. -->
+    <li style="background-image: url(./img/archi.jpeg);"></li>
+    <li style="background-image: url(./img/mare.jpeg);"></li>
+  </ul>
+</div>
+
+  </div>
+
+
+  <div> <!-- Cerimonia -->
+    <h2 class="titolo">Cerimonia</h2>
+    <div class="half">
+      <img src="./img/eremi.jpeg" alt="">
+    </div>
+    <div class="half">
+      <p>Sabato, 18 Giugno, 2022<br/>
+        ore 11:00
+      </p>
+      <p class="location chiesa">Chiesa dei Santi<br/>
+      Filippo e Giacomo</p>
+      <p class="address">
+        Piazza Eremitani, 9<br/>
+        Padova 35130
+      </p>
+    </div>
+  </div>
+  <div class="odd"> <!-- Ricevimento -->
+  <h2 class="titolo">Ricevimento</h2>
+    <div class="half mobileonly">
+      <img src="./img/villa.jpeg" alt="">
+    </div>
+    <div class="half">
+      <p>Vi aspettiamo per<br/>
+      festeggiare presso
+      </p>
+      <p class="location">
+        Villa Sangiantoffetti Rigon
+      </p>
+      <p class="address">Viale Crispi, 2<br/>
+      Ponte di Barbarano (Vicenza) 36021</p>
+    </div>
+    <div class="half notmobile">
+      <img src="./img/villa.jpeg" alt="">
+    </div>
+  </div>
+  <div id="rsvp"> <!-- RSVP -->
+      <h2 class="titolo">Let's Party</h2>
+    <p class="verrai">Verrai al matrimonio?<br/> Conferma la tua presenza tramite il modulo qui sotto!</p>
+
+    <a class="button" href="./rsvp.html">Register Now</a>
+
+  </div>
+  <div class="imgdiv" id="stacco"> <!-- IMG stacco -->
+    <!--img src="./img/specchio2.jpeg" alt="" width="100%" IN BACKGROUND-->
+  </div>
+  <div class="odd lista"> <!-- Lista Nozze -->
+      <h2 class="titolo">Lista Nozze</h2>
+      <p>Coming Soon</p>
+      <br/>
+      <p >Se invece desideri aiutarci per costruire la nostra nuova famiglia, di seguito le coordinate bancarie: <br/>
+        Intestatario: Valentina Immacolata Cagliani<br/>
+        IBAN:  <span class="codice">IT52D0306951640100000001657</span><br/>
+        Causale: Regalo Simone e Valentina
+      </p>
+  </div>
+  <div class="footer"> <!-- Footer -->
+    <p>© 2022 Cagliani Valentina e Rizzato Simone</p>
+    <hr style="width:60%;border:1px dotted lightgray"/>
+    <br/>
+      <p>Go to the <a href="admin.html">admin<a> area</p>
+  </div>
+
+  <!--script src="js/scripts.js"></script-->
+  <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+  <script src="js/slider.js"></script>
+
+</body>
+</html>

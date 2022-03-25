@@ -1,0 +1,9 @@
+RewriteEngine On    
+RewriteRule ^(.*)\.xml$ [R=404,L]
+
+RewriteEngine on
+ErrorDocument 404   /404.html
+
+
+
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

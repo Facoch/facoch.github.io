@@ -26,22 +26,36 @@
   <link rel="stylesheet" href="css/reset.css?v=1.0">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="css/slider.css?v=1.0">
+  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 
 </head>
 
 <body>
-
+  <nav class="mobile-menu" style="opacity:0">
+  <label for="show-menu" class="show-menu showlabel"><div class="lines"></div></label>
+  	<input type="checkbox" id="show-menu">
+  		<ul id="menu">
+  		<li><a class="menulink" href="#copertina">Home</a></li>
+  		<li>			<a class="menulink" href="#acerimonia">Cerimonia</a>		</li>
+  		<li>			<a class="menulink" href="#aricevimento">Ricevimento</a>		</li>
+  		<li><a class="menulink" href="#alista">Lista Nozze</a></li>
+  		<li><a class="menulink" href="#rsvp">Let's Party</a></li>
+  	</ul>
+  </nav>
   <div id="copertina" class="imgdiv"> <!-- Copertina -->
     <div id="biglietto" class="">
 
       <p id="nomelui" class="nomesposi"><span class="nome">Simone</span><br/><span class="cognome">Rizzato</span></p>
       <p id="nomelei" class="nomesposi"><span class="nome">Valentina</span> <br/><span class="cognome">Cagliani</span></p>
-      <img src="./img/logoq.png" alt="" width="40%">
-      <p id="annuncio">Annunciano con gioia il loro matrimonio<br/> che si svolgerà a Padova</p>
+      <img src="./img/logoq.png" alt="" width="50%">
+      <p id="annuncio">Annunciano con gioia <br/>il loro matrimonio</p>
       <div id="dataora">
         <p>Sabato</p>
         <p class="middle">18<br/>Giugno<br/>2022</p>
         <p>ore 11:00</p>
+      </div>
+      <div id="divfiore" >
+        <img id="imgfiore" src="./img/fiore.webp" width="150px" style="opacity:0">
       </div>
 
     </div>
@@ -70,16 +84,15 @@
     <li style="background-image: url(./img/archi.jpeg);"></li>
 
     <li style="background-image: url(./img/mare.jpeg);"></li>
-    <!-- Slider needs at least three so I repeat the first two. -->
-    <li style="background-image: url(./img/archi.jpeg);"></li>
-    <li style="background-image: url(./img/mare.jpeg);"></li>
+    <!-- Slider needs at least three . -->
+    <li style="background-image: url(./img/anello.jpeg);"></li>
   </ul>
 </div>
 
   </div>
 
 
-  <div> <!-- Cerimonia -->
+  <div id="acerimonia"> <!-- Cerimonia -->
     <h2 class="titolo">Cerimonia</h2>
     <div class="half">
       <img src="./img/eremi.jpeg" alt="">
@@ -91,12 +104,13 @@
       <p class="location chiesa">Chiesa dei Santi<br/>
       Filippo e Giacomo</p>
       <p class="address">
-        Piazza Eremitani, 9<br/>
-        Padova 35130
+        Piazza Eremitani 9, Padova<br/>
+        È possibile parcheggiare presso <br/>
+        <a href="https://goo.gl/maps/QCNtqDHxij6EDhdj6">Park Padova Centro</a>
       </p>
     </div>
   </div>
-  <div class="odd"> <!-- Ricevimento -->
+  <div class="odd" id="aricevimento"> <!-- Ricevimento -->
   <h2 class="titolo">Ricevimento</h2>
     <div class="half mobileonly">
       <img src="./img/villa.jpeg" alt="">
@@ -115,17 +129,11 @@
       <img src="./img/villa.jpeg" alt="">
     </div>
   </div>
-  <div id="rsvp"> <!-- RSVP -->
-      <h2 class="titolo">Let's Party</h2>
-    <p class="verrai">Verrai al matrimonio?<br/> Conferma la tua presenza tramite il modulo qui sotto!</p>
 
-    <a class="button" href="./rsvp.html">Register Now</a>
-
-  </div>
   <div class="imgdiv" id="stacco"> <!-- IMG stacco -->
     <!--img src="./img/specchio2.jpeg" alt="" width="100%" IN BACKGROUND-->
   </div>
-  <div class="odd lista"> <!-- Lista Nozze -->
+  <div class="lista" id="alista"> <!-- Lista Nozze -->
       <h2 class="titolo">Lista Nozze</h2>
       <p>Coming Soon</p>
       <br/>
@@ -135,6 +143,18 @@
         Causale: Regalo Simone e Valentina
       </p>
   </div>
+  <div id="rsvp" class="odd"> <!-- RSVP -->
+      <h2 class="titolo">Let's Party</h2>
+    <p class="verrai">Verrai al matrimonio?<br/> Conferma la tua presenza tramite il modulo qui sotto!</p>
+
+  </div>
+  <div class="mainaction odd">
+    <a class="button" href="./rsvp.html">Register Now</a>
+  </div>
+  <div class="spacer odd">
+
+  </div>
+
   <div class="footer"> <!-- Footer -->
     <p>© 2022 Cagliani Valentina e Rizzato Simone</p>
     <hr style="width:60%;border:1px dotted lightgray"/>
@@ -148,6 +168,57 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
   <script src="js/slider.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      let w = $('#imgfiore').width();
+      let h = $('#imgfiore').height();
+      $('#imgfiore').width(w*0.95);
+      $('#imgfiore').height(h*0.95);
+      $( "#imgfiore" ).delay(500).animate({opacity:1,width:w,height:h}, 1500);
+    });
+
+    var isDown= false;
+
+    function checkPosition() {
+      let screenHeight = window.innerHeight;
+      let bigliettoheight = $("#biglietto").height();
+      let windowY = window.scrollY;
+      console.log(screenHeight);
+      console.log(windowY);
+      console.log(isDown);
+      if (windowY+screenHeight < bigliettoheight +10 && isDown) {
+        // Scrolling UP
+        $( ".mainaction" ).fadeTo( "fast" , 0);
+        $( ".mobile-menu" ).fadeTo( "fast" , 0);
+        isDown=false;
+      }
+      if(windowY+screenHeight > bigliettoheight +10 && !isDown) {
+        // Scrolling DOWN
+        $( ".mainaction" ).fadeTo( "slow" , 1);
+        $( ".mobile-menu" ).fadeTo( "slow" , 1);
+        isDown=true;
+      }
+      scrollPos = windowY;
+    }
+    $("#show-menu").click(function(){
+      $("#menu").toggle(350);
+    });
+    $("#menu").click(function(){
+      $("#menu").toggle(350);
+    });
+
+    window.addEventListener('scroll', checkPosition);
+
+    function scrollToElement (selector) {
+      $('html, body').animate({
+        scrollTop: $(selector).offset().top +1
+      }, 700);
+    };
+
+    $(document).on('click', 'a.menulink', function () {
+      scrollToElement($(this).attr('href'));
+    });
+  </script>
 
 </body>
 </html>

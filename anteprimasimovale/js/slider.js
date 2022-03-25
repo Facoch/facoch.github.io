@@ -12,6 +12,7 @@ var waitForFinalEvent = (function () {
 })();
 
 jQuery(document).ready(function ($) {
+  
 
   // $('#checkbox').change(function(){
   //   setInterval(function () {
@@ -26,15 +27,15 @@ jQuery(document).ready(function ($) {
   $('#slider').css({ width: slideWidth, height: slideHeight });
   $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
 
-  $(window).resize(function () {
-    if($( window ).width()<980){
-      waitForFinalEvent(function(){
-        moveRight();
-      }, 500, "resetslider");}
-  });
-
-
-  var int_Slide = setInterval(moveRight, 4000);
+  // $(window).resize(function () {
+  //   if($( window ).width()<980){
+  //     waitForFinalEvent(function(){
+  //       moveRight();
+  //     }, 500, "resetslider");}
+  // });
+  //
+  //
+  // var int_Slide = setInterval(moveRight, 4000);
 
 
     $('#slider ul li:last-child').prependTo('#slider ul');
@@ -72,16 +73,16 @@ jQuery(document).ready(function ($) {
 
     $('a.control_prev').click(function (e) {
       e.preventDefault();
-      clearInterval(int_Slide);
+      // clearInterval(int_Slide);
       moveLeft();
-      int_Slide = setInterval(moveRight, 4000);
+      // int_Slide = setInterval(moveRight, 4000);
     });
 
     $('a.control_next').click(function (e) {
       e.preventDefault();
-      clearInterval(int_Slide);
+      // clearInterval(int_Slide);
       moveRight();
-      int_Slide = setInterval(moveRight, 4000);
+      // int_Slide = setInterval(moveRight, 4000);
     });
 
 

@@ -9,7 +9,7 @@
 body{
   text-align: center;
   color: rgb(75, 86, 118);
-  background-color: rgb(220, 227, 245);
+  background-color: #A8B2BF;
   font-family: "Didot",serif;
   font-size: 18px;
 }
@@ -38,7 +38,7 @@ body{
 }
 
 body > div{
-  background-color: rgb(220, 227, 245);
+  background-color: #A8B2BF;
     padding: 1.5em 1em 3em 1em;
 }
 body > div.odd{
@@ -96,35 +96,191 @@ h3{
 /* SEZIONI */
 
 
+
+.mobile-menu {
+  display:block;
+  width:100%;
+  background-color: transparent;
+  line-height: 1.6em;
+  font-weight: 400;
+  width:100%;
+  text-align:center;
+	position: sticky;
+  top:0;
+  margin:0 auto;
+  z-index: 999;
+}
+/*Strip the ul of padding and list styling*/
+.mobile-menu ul {
+	list-style-type:none;
+  margin: 0 auto;
+  padding-left:0;
+  text-align:center;
+  width:100%;
+  position: absolute;
+  background-color: #A8B2BF;
+}
+
+/*Create a horizontal list with spacing*/
+.mobile-menu li {
+	display:inline-block;
+	/*float: left;
+	margin-right: 1px;*/
+}
+
+/*Style for menu links*/
+.mobile-menu li a {
+	display:block;
+	min-width:140px;
+	text-align: center;
+	color: #fff;
+  text-transform:uppercase;
+  background-color: #A8B2BF;
+	text-decoration: none;
+  margin-left:-5px;
+  padding: 10px 0;
+-webkit-transition: all 0.4s ease 0s;
+-moz-transition: all 0.4s ease 0s;
+-ms-transition: all 0.4s ease 0s;
+-o-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
+}
+
+/*Hover state for top level links*/
+.mobile-menu li:hover a {
+	color: rgb(75, 86, 118);
+  background-color:#EAE8E8;
+}
+
+/*Style for dropdown links*/
+.mobile-menu li:hover ul a {
+	background: #EAE8E8;
+	color: rgb(75, 86, 118);
+	height: 40px;
+	line-height: 40px;
+}
+
+/*Hover state for dropdown links*/
+.mobile-menu li:hover .mobile-menu ul a:hover {
+	color: rgb(75, 86, 118);
+}
+
+/*Hide dropdown links until they are needed*/
+.mobile-menu li ul {
+	display: none;
+}
+
+/*Make dropdown links vertical*/
+.mobile-menu li ul li {
+	display: block;
+	float: none;
+}
+
+/*Prevent text wrapping*/
+.mobile-menu li ul li a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+
+/*Style 'show menu' label button and hide it by default*/
+.mobile-menu .show-menu {
+	text-decoration: none;
+	color: #fff;
+  background-color: transparent;
+	text-align: center;
+	padding: 10px 15px;
+	display: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.mobile-menu .show-menu span{
+   padding-left: 25px;
+}
+
+/*Hide checkbox*/
+.mobile-menu input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+/* .mobile-menu input[type=checkbox]:checked ~ #menu{
+    display: block;
+} */
+
+/*Responsive Styles*/
+
+@media screen and (max-width : 1780px){
+  label.showlabel{
+    position: absolute;
+    right: 0;
+  }
+  .mobile-menu .lines {
+    border-bottom: 15px double rgb(75, 86, 118);
+    border-top: 5px solid rgb(75, 86, 118);
+    content:"";
+    height: 5px;
+    width:20px;
+    padding-right:15px;
+    float: right;
+}
+	/*Make dropdown links appear inline*/
+	.mobile-menu ul {
+		position: absolute;
+    top:45px;
+    right: 0;
+    width: 200px;
+		display: none;
+    z-index: 999;
+    border-radius: 4px;
+	}
+	/*Create vertical spacing*/
+	.mobile-menu li {
+    margin: 0;
+		margin-bottom: 1px;
+    border-radius: 4px;
+	}
+	/*Make all menu links full width*/
+	.mobile-menu ul li, .mobile-menu li a {
+    margin: 0;
+		width: 100%;
+    border-radius: 4px;
+	}
+	/*Display 'show menu' link*/
+	.mobile-menu .show-menu {
+		display:block;
+	}
+}
+/* HEADER */
+
 div#biglietto{
   margin-left: auto;
   margin-right: auto;
   height: 105vw;
   width: 100vw;
-  max-height: 600px;
-  max-width: 630px;
+  max-height: 700px;
+  max-width: 730px;
   background-color: white;
+  position: relative;
 }
 div#biglietto p{
   color: black;
   text-transform: uppercase;
   padding: 0 20%;
   line-height: 1.2;
+  z-index: 2;
+    position: relative;
+  text-shadow: 1px 1px 2px white, -1px -1px 2px white,1px 1px 2px white, -1px -1px 2px white;
 }
-@media all and (max-width: 630px) {
-  div#biglietto p{
-    padding: 0 10%;
-  }
-}
+
 div#biglietto div#dataora{
   width: 70%;
   margin:auto;
   margin-top: 2em;
-}
-@media all and (max-width: 390px) {
-  div#biglietto div#dataora{
-    margin-top: 1em;
-  }
+
+
 }
 
 div#biglietto div#dataora p{
@@ -132,12 +288,12 @@ div#biglietto div#dataora p{
   width: 30%;
   padding: 10px 0;
   vertical-align: middle;
+
 }
 div#biglietto div#dataora p.middle{
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-
 p#annuncio{
   font-size: 1.1em;
 }
@@ -160,6 +316,72 @@ span.nome{
 span.cognome{
   font-size: 1.2em;
 }
+#biglietto #divfiore{
+  position: absolute;
+  left:-5em;
+  bottom: -3px;
+}
+#biglietto #divfiore img{
+  height: 50vh;
+  width: auto;
+  position: relative;
+  z-index: 0;
+}
+@media all and (max-width: 900px){
+  #biglietto #divfiore{
+    position: absolute;
+    left:-2em;
+    bottom: -3px;
+  }
+  #biglietto #divfiore img{
+    height: 30vh;
+    width: auto;
+  }
+
+}
+
+@media all and (max-width: 630px){
+
+  div#biglietto{
+    width: 100vw;
+    min-height: 100vh;
+  }
+  div#biglietto img{
+    margin: 5vh auto;
+    width: 40vh;
+    min-width: 250px;
+    max-width: 90vw;
+  }
+  #biglietto #divfiore img{
+    height: 30vh;
+    width: auto;
+    min-width: 0px;
+    margin:0;
+  }
+  div#biglietto p.nomesposi{
+    padding-top: 5vh;
+  }
+  div#biglietto p{
+    padding: 0 10%;
+  }
+}
+@media all and (max-width: 390px) {
+  div#biglietto div#dataora{
+    margin-top: 1em;
+  }
+  div#biglietto img{
+    margin: 10vh auto;
+
+  }
+  #biglietto #divfiore img{
+    height: 20vh;
+    width: auto;
+  }
+}
+
+/* FRASE */
+
+
 
 div#frasediv{
   font-size: 2em;
@@ -175,6 +397,8 @@ div#frasediv p#firma{
     display: none;
   }
 }
+
+/* LOCATION */
 
 div.half{
   vertical-align: middle;
@@ -229,12 +453,14 @@ div.half p.address{
   font-size: 1.3em;
   letter-spacing: 1px;
 }
-
-
-div#rsvp p.verrai{
-  font-size: 1.2em;
-  margin-bottom: 2.5em;
+div.half p.address a{
+  color: #2c699f;
 }
+div.half p.address a:hover{
+  color: rgb(75, 86, 118);
+}
+/* LISTA NOZZE */
+
 
 div#stacco{
   height: 780px;
@@ -268,6 +494,65 @@ span.codice{
   font-weight: 200;
 }
 
+/* RSVP */
+
+div#rsvp p.verrai{
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+div#rsvp{
+  padding-bottom: 2.5em;
+}
+div.mainaction{
+  opacity: 0;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+div.mainaction a {
+
+  font-family: "Bellota Text", sans-serif;
+  text-transform: uppercase;
+  margin: 0 auto;
+  background-color: #F6D2CE;
+  width: 60%
+
+}
+div.mainaction a:hover {
+  background-color: #FFC9C1;
+text-shadow: 1px 1px 5px #F6E2DE, -1px -1px 5px #F6D2CE;
+
+}
+@media all and (max-width: 840px) {
+  div.mainaction  {
+
+    width: 100%;
+
+  }
+  div.mainaction a {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+
+  }
+}
+
+div.spacer{
+  padding: 0;
+  margin: 0;
+  height: 2.5em;
+}
+
+/* FOOTER */
+
+.footer{
+  border-top: 2px solid #EAE8E8;
+}
 
 .footer a, .footer a:visited{
   color: inherit;
@@ -276,6 +561,7 @@ span.codice{
   color: #2c699f;
 }
 
+/* ELSE */
 
 #successo p{
   font-size: 2em;

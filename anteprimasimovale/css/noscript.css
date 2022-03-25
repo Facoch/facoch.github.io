@@ -9,3 +9,9 @@
 #sticker{
   display: none !important;
 }
+
+
+div.mainaction{
+  position: static !important;
+  opacity: 1 !important;
+}

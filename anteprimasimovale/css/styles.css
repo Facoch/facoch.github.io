@@ -96,7 +96,6 @@ h3{
 /* SEZIONI */
 
 
-
 .mobile-menu {
   display:block;
   width:100%;
@@ -205,54 +204,48 @@ transition: all 0.4s ease 0s;
     display: none;
 }
 
-/*Show menu when invisible checkbox is checked*/
-/* .mobile-menu input[type=checkbox]:checked ~ #menu{
-    display: block;
-} */
 
-/*Responsive Styles*/
 
-@media screen and (max-width : 1780px){
-  label.showlabel{
-    position: absolute;
-    right: 0;
-  }
-  .mobile-menu .lines {
-    border-bottom: 15px double rgb(75, 86, 118);
-    border-top: 5px solid rgb(75, 86, 118);
-    content:"";
-    height: 5px;
-    width:20px;
-    padding-right:15px;
-    float: right;
+label.showlabel{
+  position: absolute;
+  right: 0;
 }
-	/*Make dropdown links appear inline*/
-	.mobile-menu ul {
-		position: absolute;
-    top:45px;
-    right: 0;
-    width: 200px;
-		display: none;
-    z-index: 999;
-    border-radius: 4px;
-	}
-	/*Create vertical spacing*/
-	.mobile-menu li {
-    margin: 0;
-		margin-bottom: 1px;
-    border-radius: 4px;
-	}
-	/*Make all menu links full width*/
-	.mobile-menu ul li, .mobile-menu li a {
-    margin: 0;
-		width: 100%;
-    border-radius: 4px;
-	}
-	/*Display 'show menu' link*/
-	.mobile-menu .show-menu {
-		display:block;
-	}
+.mobile-menu .lines {
+  border-bottom: 15px double rgb(75, 86, 118);
+  border-top: 5px solid rgb(75, 86, 118);
+  content:"";
+  height: 5px;
+  width:20px;
+  padding-right:15px;
+  float: right;
 }
+/*Make dropdown links appear inline*/
+.mobile-menu ul {
+	position: absolute;
+  top:45px;
+  right: 0;
+  width: 200px;
+	display: none;
+  z-index: 999;
+  border-radius: 4px;
+}
+/*Create vertical spacing*/
+.mobile-menu li {
+  margin: 0;
+	margin-bottom: 1px;
+  border-radius: 4px;
+}
+/*Make all menu links full width*/
+.mobile-menu ul li, .mobile-menu li a {
+  margin: 0;
+	width: 100%;
+  border-radius: 4px;
+}
+/*Display 'show menu' link*/
+.mobile-menu .show-menu {
+	display:block;
+}
+
 /* HEADER */
 
 div#biglietto{
@@ -535,8 +528,9 @@ text-shadow: 1px 1px 5px #F6E2DE, -1px -1px 5px #F6D2CE;
 
   }
   div.mainaction a {
-    padding-left: 0;
-    padding-right: 0;
+    border-radius: 0;
+    padding: 1.2em 0;
+    font-size: 1.5em;
     width: 100%;
 
   }

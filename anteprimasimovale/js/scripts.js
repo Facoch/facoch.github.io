@@ -5,6 +5,14 @@ $( document ).ready(function(){
 
 })
 
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 function setTextareaHeight(textareaEl){
   textareaEl.style.height = "";
   let emi =window.getComputedStyle(textareaEl).fontSize.match(/\d+/)[0];
@@ -17,6 +25,8 @@ $("#submitRSVP").click(function(event){
   $('#name').removeClass('error');
   $('#personeError').hide();
   $('#persone').removeClass('error');
+  $('#mailError').hide();
+  $('#mail').removeClass('error');
 
   //collect data
   var data = $('#rsvpForm').serializeArray().reduce(function(obj, item) {
@@ -30,6 +40,11 @@ $("#submitRSVP").click(function(event){
     $('#name').addClass('error');
     error=true;
   }
+  if (!validateEmail(data["mail"])) {
+    $('#mailError').show();
+    $('#mail').addClass('error');
+    error=true;
+  }
   if (! (onlyDigits(data["persone"])) ) {
     $('#personeError').show();
     $('#persone').addClass('error');
@@ -38,7 +53,8 @@ $("#submitRSVP").click(function(event){
   if(error){
     return;
   }
-  console.log(data);
+  //console.log(data);
+
 
   // Show loading thingy
   $('#loading').show();

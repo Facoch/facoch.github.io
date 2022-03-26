@@ -37,6 +37,12 @@
     #listaInvitati td{
       padding:10px 1em;
     }
+    a.downl.button{
+      display: inline-block;
+      width: auto;
+      margin: 1em;
+      border: 1px solid darkgray;
+    }
   </style>
 </head>
 
@@ -53,14 +59,14 @@
 					</div>
 
 					<table id="listaInvitati"  style="text-align:left;padding:0 4em;width:100%">
-            <tr><th style="width:25%">Nome</th><th style="width:10%">Numero</th><th style="width:65%">Note</th></tr>
+            <tr><th style="width:25%">Nome</th><th style="width:7%">Numero</th><th style="width:15%">Mail</th><th style="width:45%">Note</th></tr>
 					</table>
 
-          
+
 					<!-- <h2 class="major">Risposte Lista Nozze</h2>
 					<ul id="listaRegali">
 					</ul> -->
-
+          <div id="downloadarea"></div>
 				</div>
 
         <div class="footer"> <!-- Footer -->
@@ -91,14 +97,20 @@
         // return;
 				var pass = $("#pwd").val();
 				$.post( "https://us-central1-matrimonio-303209.cloudfunctions.net/listinv-vs", {"pwd":pass}, function(results) {
+          let data_csv_en = "data:text/csv;charset=utf-8,Nome;Numero;Email;Note\r\n";
+          let data_csv_it = data_csv_en;
+
 					var invitati = results["rsvp"];
+          console.log(invitati);
 					var nodo = $("#listaInvitati");
 					//nodo.empty();
 					// invitati.forEach((item, i) => {
 					// 	nodo.append("<li><em>"+ item["name"]+ "</em> - <span class='codice'>" +  item.persone + "</span> - " +  item.message + "</li>")
 					// });
           invitati.forEach((item, i) => {
-						nodo.append("<tr><td>"+ item["name"]+ "</td><td><span class='codice'>" +  item.persone + "</span></td><td>" +  item.message + "</td></tr>")
+						nodo.append("<tr><td>"+ item["name"]+ "</td><td><span class='codice'>" +  item.persone + "</span></td><td>"+  item.mail + "</span></td><td>" +  item.message + "</td></tr>");
+            data_csv_it += ""+ item["name"] +";"+ item.persone +";"+ item.mail +";"+item.message +  "\r\n";
+            data_csv_en += ""+ item["name"] +","+ item.persone +","+ item.mail +","+item.message +  "\r\n";
 					});
 					// var nodo2 = $("#listaRegali");
 					// nodo2.empty();
@@ -109,6 +121,18 @@
 					// 	}
 					// });
 					$("#passwordform").hide()
+
+          var encoded_it = encodeURI(data_csv_it);
+          var encoded_en = encodeURI(data_csv_en);
+          // var link = document.createElement("a");
+          // link.setAttribute("href", encodedUri);
+          // link.setAttribute("download", "my_data.csv");
+          // link.appendTo($("#downloadarea"));
+          // $("#downloadarea").add(link);
+          $("<a class='downl button'>Download CSV Excel ENG</a>").attr('href',encoded_en).attr("download","lista_comma.csv").appendTo('#downloadarea');
+          $("<a class='downl button'>Download CSV Excel ITA</a>").attr('href',encoded_it).attr("download","lista_semicolon.csv").appendTo('#downloadarea');
+
+          //document.body.appendChild(link); // Required for FF
 				}).fail(function(results) {
 						if (results.responseText == "WRONGPASS") {
 							$(".error").show();

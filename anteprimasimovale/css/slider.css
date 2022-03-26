@@ -54,7 +54,7 @@ a.control_prev, a.control_next {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 999;
+  z-index: 99;
   display: block;
   width: auto;
   height: auto;

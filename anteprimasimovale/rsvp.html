@@ -58,6 +58,11 @@
             <p id="personeError" class="error" style="display:none">Scrivi un numero.</p>
           </div>
           <div class="field">
+            <label class="long" for="persone">Indirizzo Email</label>
+            <input type="text" name="mail" id="mail">
+            <p id="mailError" class="error" style="display:none">Inserire un indirizzo Email.</p>
+          </div>
+          <div class="field">
             <label for="message">Note</label>
             <textarea oninput=setTextareaHeight(this) placeholder="Intolleranze, allergie, età dei bambini, necessità di seggiolini..." name="message" id="message" type="text"></textarea>
             <!-- <textarea oninput='this.style.height = "";let emi =window.getComputedStyle(this).fontSize.match(/\d+/)[0]; console.log(emi); this.style.height = (this.scrollHeight - 2*emi)+ "px"' placeholder="Intolleranze, allergie, età dei bambini, necessità di seggiolini..." name="message" id="message" type="text"></textarea> -->
